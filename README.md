@@ -220,3 +220,26 @@ $ python greet.py --greeter Phil goodbye --name Jonny --friendliness 2
 This is a greeting from Phil:
 So long Jonny!
 ```
+
+## Configuration with Toml
+
+Arguments to `typeo` commands can also be configured via `toml` files. 
+
+Let's recreate the above example:
+
+```toml
+[tool.typeo.scripts.greet]
+flag = true
+argument_1 = 123
+argument_2 = 
+commands.hello
+
+
+```
+
+
+This command can be run with this configuration with 
+
+```console
+ --typeo config.toml:greet
+```
